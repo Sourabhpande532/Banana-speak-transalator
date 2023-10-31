@@ -1,8 +1,5 @@
-const userName = prompt("What's your Name ?");
-const userWelcomeMessage = "Hey! Welcome, " + userName;
-
-alert(userWelcomeMessage);
-const userButton = document.querySelector(".btn");
+const textArea = document.querySelector("#textbox")
+const userButton = document.querySelector("#btn-translate");
 userButton.addEventListener("click", ()=>{
-    alert("user is clicking")
+    console.log(textArea.value);
 }) 
