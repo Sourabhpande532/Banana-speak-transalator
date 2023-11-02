@@ -1,9 +1,26 @@
-const textArea = document.querySelector("#textbox")
+const textArea = document.querySelector("#textbox");
 const userTranslateButton = document.querySelector("#btn-translate");
-const displayMessage = document.querySelector("#output")
-displayMessage.innerHTML = "<h1>Hey,This is sourabh</h1>"
+const displayMessage = document.querySelector("#output");
 
-userTranslateButton.addEventListener("click", ()=>{
-    // console.log(textArea.value);
-    displayMessage.innerText = "Done! fdjfdkf dfdjf " + textArea.value;
-}) 
+const serverUrl =
+  "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+console.log(encodeURI(serverUrl));
+const getTranslateUrl = (text) => {
+  return serverUrl + "?" + "text=" + text;
+};
+
+function errorHandler(error) {
+  console.log("error occured " + error);
+  alert("something wrong with server try again after some time");
+}
+
+userTranslateButton.addEventListener("click", () => {
+  /* taking input */
+  const inputText = textArea.value;
+
+  /* calling server for processing */
+  fetch(getTranslateUrl(inputText))
+    .then((response) => response.json())
+    .then((json) => console.log(json.contents.translated))
+    .catch(errorHandler);
+});
