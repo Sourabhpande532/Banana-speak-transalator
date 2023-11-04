@@ -1,7 +1,7 @@
 # Banana-speak
 By sourabh pande
 
- ![prajwal](https://img.shields.io/badge/sourabh--Pande-JS--Developer-green)
+ ![sourabh](https://img.shields.io/badge/sourabh--Pande-JS--Developer-green)
 
 ---
 ## This is an Banana-speak app made with pure javascript.
