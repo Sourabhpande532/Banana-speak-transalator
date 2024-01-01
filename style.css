@@ -4,10 +4,11 @@ body {
   background-color: pink;
   font-family: "Edu TAS Beginner", cursive;
   font-size: large;
+  overflow: hidden;
 }
 textarea {
   width: 80%;
-  height: 40vh;
+  height: 20vh;
   display: block;
   margin: 1rem;
   padding: 1rem;
@@ -15,7 +16,7 @@ textarea {
 #output {
   border: 1px solid black;
   width: 80%;
-  height: 30vh;
+  height: 15vh;
   display: block;
   margin: 1rem;
   padding: 1rem;
