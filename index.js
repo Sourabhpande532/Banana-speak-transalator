@@ -1,10 +1,10 @@
+const serverUrl = "https://api.funtranslations.com/translate/minion.json";
+
 const textArea = document.querySelector("#textbox");
 const userTranslateButton = document.querySelector("#btn-translate");
-const displayMessage = document.querySelector("#output");
+const displayOutputMessage = document.querySelector("#output");
 
-const serverUrl = "https://api.funtranslations.com/translate/minion.json";
-// console.log(encodeURI(serverUrl));
-
+// generate the translation API URL with the provided text
 const getTranslateUrl = (text) => {
   return serverUrl + "?" + "text=" + text;
 };
@@ -14,20 +14,22 @@ function errorHandler(error) {
   alert("something wrong with server try again after some time");
 }
 
+// Event listener for the translation button click
 userTranslateButton.addEventListener("click", () => {
-  const inputText = textArea.value;
-  /* calling server for processing */
-  fetch(getTranslateUrl(inputText))
+// Get the input text from the textarea
+const inputText = textArea.value;
+
+  // Perform a fetch request to the translation API
+fetch(getTranslateUrl(inputText))
     .then((response) => response.json())
     .then((json) => {
+     if(!json.contents || !json.contents.translated) {
+        throw new Error("Invalid response format from the server");
+      }
+
       let translatedUrl = json.contents.translated;
-      displayMessage.innerText = translatedUrl;
+      displayOutputMessage.innerText = translatedUrl;
     })
 
     .catch(errorHandler);
 });
-
-
-/* Ref:const serverUrl =
-   "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
-*/
