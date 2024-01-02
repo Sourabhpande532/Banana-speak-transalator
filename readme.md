@@ -4,7 +4,7 @@ By sourabh pande
  ![sourabh](https://img.shields.io/badge/sourabh--Pande-JS--Developer-green)
 
 ---
-## This is an Banana-speak app made with pure javascript.
+## This is an Banana-speak app made with pure javascript help you to perform translation help of API.
 
 ---
 ## Technologies used

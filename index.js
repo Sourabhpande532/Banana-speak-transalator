@@ -4,7 +4,7 @@ const textArea = document.querySelector("#textbox");
 const userTranslateButton = document.querySelector("#btn-translate");
 const displayOutputMessage = document.querySelector("#output");
 
-// generate the translation API URL with the provided text
+// Construct & generate the translation API URL with the provided text
 const getTranslateUrl = (text) => {
   return serverUrl + "?" + "text=" + text;
 };
